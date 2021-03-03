@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <string.h>
+struct employee
+{
+    char id[10];
+    char comp[10];
+};
+typedef struct employee emp;
+int main()
+{
+    emp *e1=(emp*)malloc(sizeof(emp));
+    strcpy(e1->id,"123");
+    strcpy(e1->comp,"cds");
+    printf("the emp id is:%s\t\n",e1->id);
+    printf("the emp company is:%s",e1->comp);
+    return 0;
+    }
