@@ -78,13 +78,35 @@ printf("data=%d,name=%s\n",n3.data,n3.name);
 
 fclose(fp);
 }
-void search(){
-int *found;int *pos;
+void search(int data, int *found, Int *pos){
+int count=0,flag=0;
+struct node e1;
+fp1=fopen("nfil" , "rb");
+while(fread(&e1,1,sizeof(e1),fp1)>0)
+{
+count++;
+if(e1.data ==data1)
+{
+flag=1;
+break;
+}
+}
+if(flag==0)
+{printf("not found\n");
+fclose(fp1);
+exit(1);
+}
+else
+{
+*pos=count;
+*found=1;
+}
+fclose(fp1);
+}
 
 
 
-
-
+}
 
 void menu(){
 printf("\n1) write() \n2)read() \n3) update() \n4) exit");
